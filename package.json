@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "A zombie shooting game",
   "scripts": {
-    "build": "sass style.scss style.css",
-    "start": "serve"
+    "build": "rm -rf dist && mkdir -p dist && cp index.html script.js dist/ && sass style.scss dist/style.css",
+    "start": "serve dist"
   },
   "dependencies": {
     "sass": "^1.70.0",
