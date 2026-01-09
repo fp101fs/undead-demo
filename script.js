@@ -396,15 +396,21 @@ $(document).ready(function() {
       }, 2500);
     };
 
-    // Preload from https://stackoverflow.com/a/10999147
+    // Preload Images
     const preload = function(files, cb) {
-      var len = files.length;
-      $(files.map(function(f) {
-        return '<img src="' + f + '" />';
-      }).join('')).load(function() {
-        if (--len === 0) {
-          cb();
-        }
+      let len = files.length;
+      if (len === 0) {
+        cb();
+        return;
+      }
+      files.forEach(function(f) {
+        const img = new Image();
+        img.src = f;
+        img.onload = img.onerror = function() {
+          if (--len === 0) {
+            cb();
+          }
+        };
       });
     };
 
