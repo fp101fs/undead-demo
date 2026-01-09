@@ -1,0 +1,13 @@
+{
+  "name": "zombie-mayhem",
+  "version": "1.0.0",
+  "description": "A zombie shooting game",
+  "scripts": {
+    "build": "sass style.scss style.css",
+    "start": "serve"
+  },
+  "dependencies": {
+    "sass": "^1.70.0",
+    "serve": "^14.0.0"
+  }
+}
